@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<!-- views/index.ejs -->
+<p> Welcome to <%= title %>. </p>
+
+<% if (isUserLoggedIn) { %>
+  <p> Hello, <%= currentUserInfo.name %>. </p>
+<% } %>
+
+<nav>
+  <ul>
+    <% if (!isUserLoggedIn) { %>
+      <li> <a href="/signup"> Sign Up </a> </li>
+      <li> <a href="/login"> Log In </a> </li>
+    <% } else { %>
+      <li> <a href="/edit-profile"> Edit Profile </a> </li>
+      <li> <a href="/logout"> Log Out </a> </li>
+    <% } %>
+  </ul>
+</nav>
