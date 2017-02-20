@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel='stylesheet' href='/stylesheets/style2.css' />
+    <link rel='stylesheet' href='/stylesheets/style2.css'/>
+    <link rel='stylesheet' href='/stylesheets/content.css'/>
   </head>
   <body>
     <header>
@@ -22,6 +23,9 @@
     		    </div>
     		    <div>
     			    <ul class="nav navbar-nav navbar-right">
+                        <% if (isUserLoggedIn) { %>
+                        <p> Hello, <%= currentUserInfo.name %>. </p>
+                        <% } %>
     				    <li><a href="/signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
     				    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     			    </ul>
