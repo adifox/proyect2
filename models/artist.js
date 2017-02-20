@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const artistShema = new Schema({
   name: String,
   email: String,
-  password: String,
-  type: String
+  password: String
 });
 
 artistShema.set('timestamps', true);
