@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style2.css' />
+    <link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+</head>
+<body>
+    <!--header Section-->
+    <div class="menu">
+        <div class="container-fluid">
+		    <div class="navbar-header">
+			    <a href="#">Talentero</a>
+		    </div>
+		    <div>
+			    <ul class="nav navbar-nav navbar-right">
+				    <li><a href="/signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+				    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			    </ul>
+		    </div>
+	    </div>
+    </div>
+    <!--Video Section-->
+    <div class="video-section">
+        <video id="video-elem" preload="auto" autoplay="true" loop="loop" poster="/images/talenteroGIF.gif">
+            <source src="/images/talentero.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </html>
