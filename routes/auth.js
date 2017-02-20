@@ -230,11 +230,4 @@ if (userType === "artist") {
     });
   });
 
-
-
-
-
-
-
-}
 module.exports = router;
