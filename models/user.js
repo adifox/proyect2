@@ -1,18 +1,16 @@
-const mongoose     = require('mongoose');
-const Schema       = mongoose.Schema;
+/*jshint esversion:6*/
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const UserSchema = mongoose.Schema({
-  name:         String,
-  username:     String,
-  email:        String,
-  password:     String,
-  talent:       String,
-  instrument:   String
+const userSchema = new Schema({
+  name:       String,
+  email:      String,
+  password:   String,
+  company:    String
 });
 
-UserSchema.set('timestamps', true);
-const User = mongoose.model('User', UserSchema);
+userSchema.set('timestamps', true);
+
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
-////
