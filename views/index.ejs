@@ -3,6 +3,7 @@
 
 <% if (isUserLoggedIn) { %>
   <p> Hello, <%= currentUserInfo.name %>. </p>
+
 <% } %>
 
 <nav>
@@ -10,6 +11,8 @@
     <% if (!isUserLoggedIn) { %>
       <li> <a href="/signup"> Sign Up </a> </li>
       <li> <a href="/login"> Log In </a> </li>
+      <li><a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=code">instagram login</a></li>
+
     <% } else { %>
       <li> <a href="/edit-profile"> Edit Profile </a> </li>
       <li> <a href="/logout"> Log Out </a> </li>

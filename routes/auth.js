@@ -67,18 +67,15 @@ router.post('/signup', (req, res, next) => {
         });
         return;
       }
-
       res.redirect('/');
     });
   });
 });
-
 router.get('/login', (req, res, next) => {
   res.render('auth/login', {
     errorMessage: ''
   });
 });
-
 router.post('/login', (req, res, next) => {
   const emailInput = req.body.email;
   const passwordInput = req.body.password;
