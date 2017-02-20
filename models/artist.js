@@ -2,14 +2,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const artistShema = new Schema({
+const artistSchema = new Schema({
   name: String,
   email: String,
   password: String
 });
 
-artistShema.set('timestamps', true);
+artistSchema.set('timestamps', true);
 
-const Artist = mongoose.model('Artist', artistShema);
+const Artist = mongoose.model('Artist', artistSchema);
 
 module.exports = Artist;

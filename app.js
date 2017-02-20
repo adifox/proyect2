@@ -12,8 +12,11 @@ const MongoStore = require('connect-mongo')(session);
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+// var users = require('./routes/users');
 const authRoutes = require('./routes/auth');
+const profileRoutesArtist = require('./routes/artist');
+
+mongoose.connect('mongodb://localhost/proyect-two');
 
 var app = express();
 
@@ -57,13 +60,13 @@ app.use((req, res, next) => {
 });
 
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
 app.use('/', authRoutes);
+app.use('/', profileRoutesArtist);
 
 
 
 
-mongoose.connect('mongodb://localhost/proyect-two');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

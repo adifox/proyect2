@@ -11,7 +11,8 @@ const bcryptSalt = 10;
 //Emepezamos el signup de los artistas
 
 //Crear condicion DE SI HACE LOGIN COMO ARTISTA O USUARIO
-var userType = "user";
+var userType = "artist"
+
 if (userType === "artist") {
 
   router.get('/signup', (req, res, next) => {
@@ -23,6 +24,8 @@ if (userType === "artist") {
     const nameInput = req.body.name;
     const emailInput = req.body.email;
     const passwordInput = req.body.password;
+    const containName = req.body.containName;
+    console.log(containName);
 
     if (emailInput === '' || passwordInput === '') {
       res.render('auth/signup', {
@@ -76,6 +79,8 @@ if (userType === "artist") {
     const emailInput = req.body.email;
     const passwordInput = req.body.password;
 
+
+
     if (emailInput === '' || passwordInput === '') {
       res.render('auth/login', {
         errorMessage: 'Enter both email and password to log in.'
@@ -116,6 +121,7 @@ if (userType === "artist") {
       res.redirect('/');
     });
   });
+
 } else {
   ////////////////////////////////////////////////////////////////////////////////////////////////
   //para registrar User
@@ -128,6 +134,7 @@ if (userType === "artist") {
     const nameInput = req.body.name;
     const emailInput = req.body.email;
     const passwordInput = req.body.password;
+
 
     if (emailInput === '' || passwordInput === '') {
       res.render('auth/signup', {
@@ -158,6 +165,7 @@ if (userType === "artist") {
         name: nameInput,
         email: emailInput,
         password: hashedPass
+
       };
 
       const theUser = new User(userSubmission);
@@ -169,7 +177,6 @@ if (userType === "artist") {
           });
           return;
         }
-
         res.redirect('/');
       });
     });
@@ -184,6 +191,7 @@ if (userType === "artist") {
   router.post('/login', (req, res, next) => {
     const emailInput = req.body.email;
     const passwordInput = req.body.password;
+    const collectionName = "user";
 
     if (emailInput === '' || passwordInput === '') {
       res.render('auth/login', {
