@@ -229,5 +229,5 @@ if (userType === "artist") {
       res.redirect('/');
     });
   });
-
+}
 module.exports = router;
