@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(expressLayouts);
 
 app.use(session({
-  secret: 'never do your own laundry again',
+  secret: 'proyect-two',
   resave: true,
   saveUninitialized: true,
   cookie: {

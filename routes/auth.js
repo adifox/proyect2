@@ -11,7 +11,7 @@ const bcryptSalt = 10;
 //Emepezamos el signup de los artistas
 
 //Crear condicion DE SI HACE LOGIN COMO ARTISTA O USUARIO
-var userType = "artist"
+var userType = "artist";
 
 if (userType === "artist") {
 
@@ -24,8 +24,6 @@ if (userType === "artist") {
     const nameInput = req.body.name;
     const emailInput = req.body.email;
     const passwordInput = req.body.password;
-    const containName = req.body.containName;
-    console.log(containName);
 
     if (emailInput === '' || passwordInput === '') {
       res.render('auth/signup', {
