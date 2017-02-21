@@ -3,9 +3,13 @@ body {
     padding: 0;
     margin: 0;
 }
+
+header {
+    margin: 0;
+    padding: 0;
+}
 .menu {
 background-color: #04A3ED;
-/*border-bottom: 4px solid #04A3ED;*/
 width:100%;
 height: auto;
 padding: 0 10px;
@@ -13,15 +17,11 @@ position: relative;
 margin: 0px;
 z-index: 99999;
 }
-
-.login {
-    color: #fff;
-    font-weight: bold;
-    font-size: 17px;
-    margin-top: 10px;
-    margin-right: 20px;
-    display: inline-block;
+.logo {
+    height: 30px;
+    margin-bottom: 7px;
 }
+
 
 .menu  .navbar-nav > .active > a {
 background-color : #04A3ED;
@@ -53,9 +53,6 @@ padding: 5px 20px;
 text-decoration: none;
 color: #EF6026;
 }
-#talentero {
-    height: 40px;
-}
 
 /* -- video section --*/
 .video-section {
@@ -66,6 +63,8 @@ color: #EF6026;
 }
 #video-elem {
     width: 100%;
+    height: auto;
+    z-index: -1;
 }
 video::-webkit-media-controls {
     display: none !important;
@@ -81,8 +80,11 @@ video::-webkit-media-controls {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 10;
+    color: #04A3ED;
 }
-.text {
+
+.overlay-for-text {
     position: absolute;
     top: 0;
     right: 0;
@@ -90,30 +92,26 @@ video::-webkit-media-controls {
     left: 0;
     width: 100%;
     height: 100%;
-    text-align: center;
     z-index: 20;
     opacity: 1;
+    text-align: center;
 }
-.text h1 {
-    margin-top: 200px;
+
+.overlay-for-text h1 {
+    font-size: 5vw;
+    margin-top: 150px;
     color: #fff;
 }
-.video-overlay2 {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba (0, 121, 191, 1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 999;
+.overlay-for-text h2 {
+    font-size: 3vw;
+    color: #fff;
 }
+@media
 
 /* --- sign up ---- */
 .container {
-    position: absolute;
-    margin-top: 70px;
+    position: relative;
+    margin-top: 50px;
 }
 .colorgraph {
   height: 5px;
@@ -223,11 +221,4 @@ a.list-group-item.active small {
 .info-block.block-info .square-box {
     background-color:#5bc0de;
     color:#FFF
-}
-
-
-/*   */
-
-body{margin-top:20px;
-background:#eee;
 }
