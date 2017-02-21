@@ -13,6 +13,7 @@ const MongoStore        = require('connect-mongo')(session);
 var index               = require('./routes/index');
 var users               = require('./routes/users');
 var authRoutes          = require('./routes/auth');
+var profile             = require('./routes/profile');
 //-- connect mongoose with the database --//
 mongoose.connect('mongodb://localhost/talentero');
 
@@ -62,6 +63,20 @@ app.use((req, res, next) => {
 app.use('/', index);
 app.use('/users', users);
 app.use('/', authRoutes);
+app.use('/profile', profile);
+// app.get("/profile", (req, res) => {
+//
+// });
+//
+// app.get("/profile/edit", (req, res) => {
+//
+// });
+//
+// app.get("/profile/delete", (req, res) => {
+//
+// });
+
+
 
 
 // catch 404 and forward to error handler
