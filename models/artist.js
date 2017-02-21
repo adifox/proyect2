@@ -9,7 +9,9 @@ const artistSchema = new Schema({
   adress: String,
   mobility: Boolean,
   profileAvatar: String,
-  youtube: String
+  youtube: String,
+  tel: String,
+  art: Boolean
 
 });
 

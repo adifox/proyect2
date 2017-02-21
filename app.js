@@ -13,6 +13,7 @@ const MongoStore = require('connect-mongo')(session);
 var index = require('./routes/index');
 var users = require('./routes/users');
 var authRoutes = require('./routes/auth');
+var profile = require('./routes/profile');
 //-- connect mongoose with the database --//
 mongoose.connect('mongodb://localhost/talentero');
 
@@ -23,7 +24,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.set('layout', 'layouts/main-layout');
-app.locals.title = 'Talentero'
+
+app.locals.title = 'Talentero';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -60,9 +62,10 @@ app.use((req, res, next) => {
 });
 
 app.use('/', index);
-// app.use('/users', users);
+app.use('/users', users);
 app.use('/', authRoutes);
-app.use('/', profileRoutesArtist);
+app.use('/profile', profile);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -81,5 +84,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

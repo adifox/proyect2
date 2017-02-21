@@ -8,10 +8,10 @@ const mongoose = require('mongoose');
 const bcryptSalt = 10;
 
 
-router.get('/user/:id/edit', (req, res, next) => {
+router.get('/:id/edit', (req, res, next) => {
   // Iteration #6 (Bonus)
   const id = req.params.id;
-  console.log(id);
+  console.log("ID" + id);
   User.findOne({
     _id: id
   }, function(err, user) {
@@ -22,21 +22,20 @@ router.get('/user/:id/edit', (req, res, next) => {
     res.render('user/edit-profile', {
       user: user
     });
+
   });
 });
 
 
 router.post('/user/:id', (req, res, next) => {
-  // Iteration #6 (Bonus)
+  console.log("USER" + req.body);
   const id = req.params.id;
   const body = req.body;
   const {
     name,
     email,
-    password,
-    company,
-    adress,
-    icon
+    password
+
   } = body;
 
 
@@ -47,10 +46,7 @@ router.post('/user/:id', (req, res, next) => {
     $set: {
       name,
       email,
-      password,
-      company,
-      adress,
-      icon
+      password
     }
   };
 
@@ -64,5 +60,19 @@ router.post('/user/:id', (req, res, next) => {
     });
   });
 });
+
+router.post('/user/:id/delete', (req, res, next) => {
+
+  const id = req.params.id;
+  const criteria = {
+    _id: id
+  };
+  User.remove(criteria, function(err) {
+    if (err) return next(err);
+    res.send('<p>Bye Bye</p>');
+  });
+});
+
+
 
 module.exports = router;
