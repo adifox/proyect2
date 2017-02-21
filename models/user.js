@@ -9,7 +9,6 @@ const userSchema = new Schema({
   company: String,
   adress: String,
   icon: String
-
 });
 
 userSchema.set('timestamps', true);

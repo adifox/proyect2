@@ -1,23 +1,14 @@
-<!-- views/index.ejs -->
-<p> Welcome to <%= title %>. </p>
+<body>
+    <!--Video Section-->
+    <div class="video-section">
+        <video id="video-elem" preload="auto" autoplay="true" loop="loop" poster="/images/talenteroGIF.gif">
+            <source src="/images/talentero.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <div class="text">
+                <h1>Welcome to Talentero</h1>
+            </div>
 
-<% if (isUserLoggedIn) { %>
-  <p> Hello, <%= currentUserInfo.name %>. </p>
-
-<% } %>
-
-<nav>
-  <ul>
-    <% if (!isUserLoggedIn) { %>
-      <button>artist</button>
-      <button>contractor</button>
-      <li> <a href="/signup"> Sign Up </a> </li>
-      <li> <a href="/login"> Log In </a> </li>
-      <li><a href="https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token">instagram login</a></li>
-
-    <% } else { %>
-      <li> <a href="/edit-profile"> Edit Profile </a> </li>
-      <li> <a href="/logout"> Log Out </a> </li>
-    <% } %>
-  </ul>
-</nav>
+        </div>
+    </div>
+</body>
