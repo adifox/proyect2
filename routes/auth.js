@@ -100,7 +100,7 @@ if (userType === "artist") {
       }
 
       req.session.currentUser = theArtist;
-      res.redirect('/');
+      res.redirect('auth/profile');
     });
   });
   router.get('/logout', (req, res, next) => {
@@ -210,7 +210,8 @@ if (userType === "artist") {
       }
 
       req.session.currentUser = theUser;
-      res.redirect('/');
+      res.redirect("/profile");
+    //   res.render('auth/profile', { currentUserInfo: theUser });
     });
   });
 

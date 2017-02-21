@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel='stylesheet' href='/stylesheets/style2.css'/>
@@ -24,10 +25,12 @@
     		    <div>
     			    <ul class="nav navbar-nav navbar-right">
                         <% if (isUserLoggedIn) { %>
-                        <p> Hello, <%= currentUserInfo.name %>. </p>
+                            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> <%= currentUserInfo.name %></a></li>
+                        <% } else { %>
+        				    <li><a href="/signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        				    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         <% } %>
-    				    <li><a href="/signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-    				    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     			    </ul>
     		    </div>
     	    </div>
