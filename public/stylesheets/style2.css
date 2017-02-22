@@ -225,3 +225,34 @@ h4 {
     background-color:#5bc0de;
     color:#FFF
 }
+/* --- pic input section ---*/
+.pic-form {
+    text-align: center;
+}
+.pics {
+    border: 1px solid black;
+    height: 600px;
+    margin-top: 50px;
+}
+.user-pics {
+    width: 120px;
+    height: 120px;
+}
+.user-pics img{
+    height: auto;
+    width: auto;
+    max-width: 120px;
+    max-height: 120px;
+}
+.pic-input-button {
+    padding: 5px 80px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+.pic-input-button:hover {
+    background-color: #337AB7;
+    border: 0;
+    color: #fff;
+}
+.choose-file {
+}
