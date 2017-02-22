@@ -99,6 +99,7 @@ router.post('/login', (req, res, next) => {
 
     req.session.currentUser = theUser;
     res.redirect('/profile');
+
   });
 });
 router.get('/logout', (req, res, next) => {
@@ -116,7 +117,5 @@ router.get('/logout', (req, res, next) => {
     res.redirect('/');
   });
 });
-
-
 
 module.exports = router;

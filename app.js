@@ -10,10 +10,11 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var authRoutes = require('./routes/auth');
-var profile = require('./routes/profile');
+var index               = require('./routes/index');
+var users               = require('./routes/users');
+var authRoutes          = require('./routes/auth');
+var profile             = require('./routes/profile');
+
 //-- connect mongoose with the database --//
 mongoose.connect('mongodb://localhost/talentero');
 

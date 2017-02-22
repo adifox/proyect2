@@ -1,8 +1,9 @@
 <!-- nav bar -->
 <div class="container">
 <div class="row">
+    <!-- left colum -->
     <div class="col-sm-3">
-        <a href="mail-compose.html" class="btn btn-danger btn-block btn-compose-email">CABRON Email</a>
+        <a href="mail-compose.html" class="btn btn-danger btn-block btn-compose-email">Compose Email</a>
         <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
             <li class="active">
                 <a href="#mail-inbox.html">
@@ -13,21 +14,15 @@
                 <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i> Send Mail</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-certificate"></i> Edit Profile</a>
+                <a href="/users/<%=currentUserInfo._id%>/edit"><i class="fa fa-certificate"></i> Edit Profile</a>
             </li>
-
-            <li><a href="#"> <i class="fa fa-trash-o"></i> Delete Profile</a></li>
+            <li><a href="/users/<%=currentUserInfo._id%>/delete"> <i class="fa fa-trash-o"></i> Delete Profile</a></li>
         </ul><!-- /.nav -->
         <h5 class="nav-email-subtitle">More</h5>
         <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
             <li>
                 <a href="#">
-                    <i class="fa fa-folder-open"></i> Promotions  <span class="label label-danger pull-right">3</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-folder-open"></i> Job list
+                    <i class="fa fa-folder-open"></i> Job List  <span class="label label-danger pull-right">3</span>
                 </a>
             </li>
             <li>
@@ -36,9 +31,23 @@
                 </a>
             </li>
         </ul><!-- /.nav -->
+        <div class="col-sm-12 pics">
+            <i class="fa fa-folder-open"></i> Upload Pictures
+            <form class="pic-form" action="/profile/upload" method="post" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="picture name">
+                <input class="choose-file" type="file" name="file">
+                <input class="pic-input-button" type="submit" value="Save">
+            </form>
+            <section class="user-pics">
+                <% pictures.forEach(function(picture) { %>
+                    <img src="<%= picture.pic_path %>" alt="<%= picture.pic_name %>" />
+                <% })%>
+            </section>
+        </div>
     </div>
+<!-- right body -->
     <div class="col-sm-9">
-        <!-- resumt -->
+        <!-- resume header -->
         <div class="panel panel-default">
                <div class="panel-heading resume-heading">
                   <div class="row">
@@ -65,15 +74,9 @@
                                     <a href="#" class="btn btn-social btn-block btn-linkedin">
                                     <i class="fa fa-linkedin"></i> </a>
                                  </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-github">
-                                    <i class="fa fa-github"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-stackoverflow">
-                                    <i class="fa fa-stack-overflow"></i> </a>
-                                 </div>
                               </div>
+
+
                            </div>
                         </div>
                         <div class="col-xs-12 col-sm-8">
@@ -81,13 +84,14 @@
                               <li class="list-group-item"><%= currentUserInfo.name %></li>
                               <li class="list-group-item">Model</li>
                               <li class="list-group-item">Wella</li>
-                              <li class="list-group-item"><i class="fa fa-phone"></i>Created <%= currentUserInfo.createdAt %> </li>
+                              <li class="list-group-item"><i class="fa fa-phone"></i>Member since <%= currentUserInfo.createdAt %></li>
                               <li class="list-group-item"><i class="fa fa-envelope"></i> <%= currentUserInfo.email %></li>
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
+               <!-- main body experiences-->
                <div class="bs-callout bs-callout-danger">
                   <h4>Summary</h4>
                   <p>
@@ -141,44 +145,9 @@
                      </a>
                   </ul>
                </div>
-               <div class="bs-callout bs-callout-danger">
-                  <h4>Key Expertise</h4>
-                  <ul class="list-group">
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc </li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                  </ul>
-               </div>
-               <div class="bs-callout bs-callout-danger">
-                  <h4>Education</h4>
-                  <table class="table table-striped table-responsive ">
-                     <thead>
-                        <tr>
-                           <th>Degree</th>
-                           <th>Graduation Year</th>
-                           <th>CGPA</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>Lorem ipsum dolor sit amet, ea vel prima adhuc</td>
-                           <td>2014</td>
-                           <td> 3.50 </td>
-                        </tr>
-                        <tr>
-                           <td>Lorem ipsum dolor sit amet, ea vel prima adhuc</td>
-                           <td>2011</td>
-                           <td> 3.25 </td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
             </div>
          </div>
-        <!-- resume -->
     </div>
 </div>
 </div>
+
