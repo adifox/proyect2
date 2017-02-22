@@ -1,6 +1,7 @@
 <!-- nav bar -->
 <div class="container">
 <div class="row">
+    <!-- left colum -->
     <div class="col-sm-3">
         <a href="mail-compose.html" class="btn btn-danger btn-block btn-compose-email">Compose Email</a>
         <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
@@ -13,26 +14,20 @@
                 <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i> Send Mail</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-certificate"></i> Important</a>
+                <a href="#"><i class="fa fa-certificate"></i> Edit Profile</a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-file-text-o"></i> Drafts <span class="label label-info pull-right inbox-notification">35</span>
-                </a>
-            </li>
-            <li><a href="#"> <i class="fa fa-trash-o"></i> Trash</a></li>
+            <li><a href="#"> <i class="fa fa-trash-o"></i> Delete Profile</a></li>
         </ul><!-- /.nav -->
-
         <h5 class="nav-email-subtitle">More</h5>
         <ul class="nav nav-pills nav-stacked nav-email mb-20 rounded shadow">
             <li>
                 <a href="#">
-                    <i class="fa fa-folder-open"></i> Promotions  <span class="label label-danger pull-right">3</span>
+                    <i class="fa fa-folder-open"></i> Job List  <span class="label label-danger pull-right">3</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-folder-open"></i> Job list
+                    <i class="fa fa-folder-open"></i> Upload Pictures
                 </a>
             </li>
             <li>
@@ -41,10 +36,24 @@
                 </a>
             </li>
         </ul><!-- /.nav -->
+        <div class="col-lg-4">
+            <i class="fa fa-folder-open"></i> Upload Pictures
+            <form action="/profile/upload" method="post" enctype="multipart/form-data">
+                <input type="text" name="name">
+                <input type="file" name="file">
+                <input type="submit" value="Save">
+            </form>
+        <section>
+            <% pictures.forEach(function(picture) { %>
+                <h3><%= picture.name %></h3>
+                <img src="<%= picture.pic_path %>" alt="<%= picture.pic_name %>" />
+            <% })%>
+        </section>
+        </div>
     </div>
+<!-- right body -->
     <div class="col-sm-9">
-
-        <!-- resumt -->
+        <!-- resume header -->
         <div class="panel panel-default">
                <div class="panel-heading resume-heading">
                   <div class="row">
@@ -71,14 +80,6 @@
                                     <a href="#" class="btn btn-social btn-block btn-linkedin">
                                     <i class="fa fa-linkedin"></i> </a>
                                  </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-github">
-                                    <i class="fa fa-github"></i> </a>
-                                 </div>
-                                 <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                                    <a href="#" class="btn btn-social btn-block btn-stackoverflow">
-                                    <i class="fa fa-stack-overflow"></i> </a>
-                                 </div>
                               </div>
 
 
@@ -96,6 +97,7 @@
                      </div>
                   </div>
                </div>
+               <!-- main body experiences-->
                <div class="bs-callout bs-callout-danger">
                   <h4>Summary</h4>
                   <p>
@@ -149,45 +151,8 @@
                      </a>
                   </ul>
                </div>
-               <div class="bs-callout bs-callout-danger">
-                  <h4>Key Expertise</h4>
-                  <ul class="list-group">
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc </li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                     <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-                  </ul>
-               </div>
-               <div class="bs-callout bs-callout-danger">
-                  <h4>Education</h4>
-                  <table class="table table-striped table-responsive ">
-                     <thead>
-                        <tr>
-                           <th>Degree</th>
-                           <th>Graduation Year</th>
-                           <th>CGPA</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>Lorem ipsum dolor sit amet, ea vel prima adhuc</td>
-                           <td>2014</td>
-                           <td> 3.50 </td>
-                        </tr>
-                        <tr>
-                           <td>Lorem ipsum dolor sit amet, ea vel prima adhuc</td>
-                           <td>2011</td>
-                           <td> 3.25 </td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
             </div>
          </div>
-        <!-- resume -->
-
     </div>
 </div>
 </div>

@@ -106,13 +106,9 @@ video::-webkit-media-controls {
     font-size: 3vw;
     color: #fff;
 }
-@media
 
 /* --- sign up ---- */
-.container {
-    position: relative;
-    margin-top: 50px;
-}
+
 .colorgraph {
   height: 5px;
   border-top: 0;
@@ -182,6 +178,13 @@ a.list-group-item.active small {
 }
 .container {
     clear: both;
+    margin-top: 40px;
+}
+h4 {
+    margin-left: 10px;
+}
+.bs-callout p {
+    margin-left: 10px;
 }
 
 /* --- profile --- */
