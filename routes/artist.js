@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const bcryptSalt = 10;
 
 router.get('/artist/:id/edit', (req, res, next) => {
-  // Iteration #6 (Bonus)
+
   const id = req.params.id;
   console.log(id);
   Artist.findOne({

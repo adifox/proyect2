@@ -1,12 +1,13 @@
 
-<form action="/users/<%= user._id %>" method="POST">
+
+<form action="/users/<%= user._id %>/" method="POST">
   <label for="name">Name</label>
   <input type="text" id="" name="name" value="<%= user.name %>">
+
   <label for="email">email</label>
   <input type="text" id="" name="email" value="<%= user.email %>">
   <label for="adress">adress</label>
   <input type="text" id="" name="adress" value="<%= user.adress %>">
-
 
 
   <button type="submit">Update</button>

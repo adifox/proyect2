@@ -11,34 +11,30 @@ const bcryptSalt = 10;
 router.get('/:id/edit', (req, res, next) => {
   // Iteration #6 (Bonus)
   const id = req.params.id;
-  console.log("ID" + id);
+  console.log("/:id/edit->" + id);
   User.findOne({
     _id: id
   }, function(err, user) {
     // if (err) return next(err);
-    console.log(err);
-    console.log(user);
-
+    console.log('user->' + user);
     res.render('user/edit-profile', {
       user: user
     });
 
   });
 });
+////////////LLEGA HASTA AQUI!!!!//////////////////////////////////////////
 
+router.post('/:id', (req, res, next) => {
 
-router.post('/user/:id', (req, res, next) => {
-  console.log("USER" + req.body);
   const id = req.params.id;
+  console.log("ID -> " + id);
   const body = req.body;
   const {
     name,
     email,
-    password
-
+    adress
   } = body;
-
-
   const criteria = {
     _id: id
   };
@@ -46,28 +42,29 @@ router.post('/user/:id', (req, res, next) => {
     $set: {
       name,
       email,
-      password
+      adress
     }
   };
-
   User.updateOne(criteria, update, function(err, user) {
     if (err) return next(err);
     User.find({}, function(err, user) {
       if (err) return next(err);
-      res.render('index.ejs', {
-        user
+      res.render('user/profile', {
+        user: user
       });
     });
   });
 });
 
-router.post('/user/:id/delete', (req, res, next) => {
+router.get('/:id/delete', (req, res, next) => {
 
   const id = req.params.id;
+  console.log(id);
   const criteria = {
     _id: id
   };
   User.remove(criteria, function(err) {
+    console.log(err);
     if (err) return next(err);
     res.send('<p>Bye Bye</p>');
   });
