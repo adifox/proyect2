@@ -26,13 +26,13 @@
     		    </div>
     		    <div>
     			    <ul class="nav navbar-nav navbar-right">
-                        <% if (isUserLoggedIn) { %>
-                            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                            <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> <%= currentUserInfo.name %></a></li>
-                        <% } else { %>
-        				    <li><a href="/signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        				    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        <% } %>
+              <% if (isUserLoggedIn) { %>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> <%= currentUserInfo.name %></a></li>
+                 <% } else { %>
+                   <li><a href="/signup" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                   <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                 <% } %>
     			    </ul>
     		    </div>
     	    </div>

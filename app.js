@@ -1,19 +1,20 @@
 /*jshint esversion:6*/
-var express             = require('express');
-var path                = require('path');
-var favicon             = require('serve-favicon');
-var logger              = require('morgan');
-var cookieParser        = require('cookie-parser');
-var bodyParser          = require('body-parser');
-const expressLayouts    = require('express-ejs-layouts');
-const mongoose          = require('mongoose');
-const session           = require('express-session');
-const MongoStore        = require('connect-mongo')(session);
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 var index               = require('./routes/index');
 var users               = require('./routes/users');
 var authRoutes          = require('./routes/auth');
 var profile             = require('./routes/profile');
+
 //-- connect mongoose with the database --//
 mongoose.connect('mongodb://localhost/talentero');
 
@@ -24,7 +25,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.set('layout', 'layouts/main-layout');
-app.locals.title = 'Talentero'
+
+app.locals.title = 'Talentero';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -64,19 +66,6 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/', authRoutes);
 app.use('/profile', profile);
-// app.get("/profile", (req, res) => {
-//
-// });
-//
-// app.get("/profile/edit", (req, res) => {
-//
-// });
-//
-// app.get("/profile/delete", (req, res) => {
-//
-// });
-
-
 
 
 // catch 404 and forward to error handler
@@ -96,5 +85,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

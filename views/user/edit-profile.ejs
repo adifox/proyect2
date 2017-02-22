@@ -1,0 +1,27 @@
+
+
+<form action="/users/<%= user._id %>/" method="POST">
+<input type="checkbox" name="check" checked="true" id="artist">artist?
+
+
+
+  <label for="name">Name</label>
+  <input type="text" id="" name="name" value="<%= user.name %>">
+
+  <label for="email">email</label>
+  <input type="text" id="" name="email" value="<%= user.email %>">
+  <label for="adress">adress</label>
+  <input type="text" id="" name="adress" value="<%= user.adress %>">
+  <label for="mobility">mobility</label>
+  <input type="text" id="" name="mobility" value="mobility">
+<div id="profile">
+  <label for="profileAvatar">profileAvatar</label>
+  <input type="text" id="" name="profileAvatar" value="avatar">
+  <label for="youtube">youtube URL</label>
+  <input type="text" id="" name="youtube" value="youtube">
+  <label for="tel">tel </label>
+  <input type="text" id="" name="tel" value="tel">
+</div>
+
+  <button type="submit">Update</button>
+</form>
