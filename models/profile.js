@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-  adress: String,
+
   mobility: Boolean,
   profileAvatar: String,
   youtube: String,

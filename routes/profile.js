@@ -8,8 +8,13 @@ const User = require('../models/user');
 /* GET /profile */
 router.get('/', function(req, res, next) {
   console.log(req.session.currentUser);
-  res.render('user/profile', {
-    currentUserInfo: req.session.currentUser
+  User.find({
+    _id: req.session.currentUser._id
+  }, function(err, user) {
+    if (err) return next(err);
+    res.render('user/profile', {
+      currentUserInfo: user[0]
+    });
   });
 });
 

@@ -3,6 +3,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
+const profile = require('../models/profile');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcryptSalt = 10;
@@ -47,12 +48,7 @@ router.post('/:id', (req, res, next) => {
   };
   User.updateOne(criteria, update, function(err, user) {
     if (err) return next(err);
-    User.find({}, function(err, user) {
-      if (err) return next(err);
-      res.render('user/profile', {
-        user: user
-      });
-    });
+    res.redirect('/profile');
   });
 });
 
