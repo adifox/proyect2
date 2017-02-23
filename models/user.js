@@ -8,10 +8,7 @@ const userSchema = new Schema({
   email: String,
   password: String,
   adress: String,
-  artist: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Profile'
-  }]
+  artist: {type: Schema.Types.ObjectId,ref: 'Profile' }
 });
 
 userSchema.set('timestamps', true);

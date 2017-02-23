@@ -13,7 +13,7 @@ const User = require('../models/user');
 router.get('/', function(req, res, next) {
   User.findOne({
     _id: req.session.currentUser._id
-  }, function(err, user) {
+}).populate("artist").exec((err, user)=> {
     if (err) return next(err);
     Picture.find({
       picUserID: req.session.currentUser._id

@@ -225,6 +225,12 @@ h4 {
     background-color:#5bc0de;
     color:#FFF
 }
+#sumary-field {
+    width: 800px;
+    height: 200px;
+    text-align: left;
+}
+
 /* --- pic input section ---*/
 .pic-form {
     text-align: center;

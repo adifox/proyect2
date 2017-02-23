@@ -21,6 +21,7 @@ router.get('/:id/edit', (req, res, next) => {
     console.log('user->' + user);
     res.render('user/edit-profile', {
       user: user
+      //pictures: pictures
     });
 
   });

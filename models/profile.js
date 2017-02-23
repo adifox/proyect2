@@ -7,7 +7,6 @@ const profileSchema = new Schema({
   summary: String,
   interests: String,
   youtube: String
-
 });
 
 profileSchema.set('timestamps', true);
