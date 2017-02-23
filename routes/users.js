@@ -20,6 +20,7 @@ router.get('/:id/edit', (req, res, next) => {
     console.log('user->' + user);
     res.render('user/edit-profile', {
       user: user
+      //pictures: pictures
     });
 
   });
@@ -66,6 +67,9 @@ router.get('/:id/delete', (req, res, next) => {
   });
 });
 
+router.get('/showusers', (req, res, next) => {
+    res.render('user/show-users', {currentUserInfo: req.session.currentUser});
+});
 
 
 module.exports = router;

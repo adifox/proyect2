@@ -7,7 +7,7 @@ const userSchema = new Schema({
   email: String,
   password: String,
   adress: String,
-  type: {}
+  artist: {type: Schema.Types.ObjectId,ref: 'Profile' }
 });
 
 userSchema.set('timestamps', true);

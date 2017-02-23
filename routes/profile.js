@@ -11,12 +11,12 @@ const User = require('../models/user');
 router.get('/', function(req, res, next) {
   User.find({
     _id: req.session.currentUser._id
-  }, function(err, user) {
+}).populate("artist").exec((err, user)=> {
     if (err) return next(err);
     Picture.find({picUserID: req.session.currentUser._id},(err, pictures) => {
       res.render('user/profile', {pictures, currentUserInfo: req.session.currentUser, currentUserInfo: user[0]});
       console.log(req.session.currentUser);
-    });    
+    });
   });
 });
 

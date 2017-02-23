@@ -3,12 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const profileSchema = new Schema({
-
-  mobility: Boolean,
-  profileAvatar: String,
-  youtube: String,
-  tel: String
-
+  talent: String,
+  summary: String,
+  interests: String,
+  youtube: String
 });
 
 profileSchema.set('timestamps', true);
