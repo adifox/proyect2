@@ -1,7 +1,24 @@
 
 
 <form action="/users/<%= user._id %>/" method="POST">
-<input type="checkbox" name="check" checked="true" id="artist">artist?
+<script type="text/javascript">
+
+
+function myFunction() {
+    var x = document.getElementById('profile');
+    var checkbox = document.querySelector('input[type=checkbox]')
+    if (x.style.display === 'block') {
+        x.style.display = 'none';
+        checkbox.checked = false;
+        checkbox.value = false
+    } else {
+        x.style.display = 'block';
+        checkbox.checked = true;
+        checkbox.value = true
+    }
+}
+
+</script>
 
 
 
@@ -14,14 +31,17 @@
   <input type="text" id="" name="adress" value="<%= user.adress %>">
   <label for="mobility">mobility</label>
   <input type="text" id="" name="mobility" value="mobility">
-<div id="profile">
-  <label for="profileAvatar">profileAvatar</label>
-  <input type="text" id="" name="profileAvatar" value="avatar">
-  <label for="youtube">youtube URL</label>
-  <input type="text" id="" name="youtube" value="youtube">
-  <label for="tel">tel </label>
-  <input type="text" id="" name="tel" value="tel">
-</div>
+  <input type="checkbox" value="false" name="check" id="artist" onclick="myFunction()">artist?
+  <div id="profile">
+    <label for="summary">Summary</label>
+    <input type="text" id="" name="summary" value="summary">
+    <label for="interests">Interests</label>
+    <input type="text" id="" name="interests" value="interests">
+    <label for="experience">Prior Experience</label>
+    <input type="text" id="" name="experience" value="experience">
+  </div>
 
   <button type="submit">Update</button>
+
+
 </form>
