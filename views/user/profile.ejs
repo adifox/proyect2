@@ -26,7 +26,10 @@
                 </a>
             </li>
             <li>
-                <a href="/users/showusers">
+
+                <a href="/users/show-artist"><!--ruta para visualizar artistas -->
+
+   
                     <i class="fa fa-folder-open"></i> See Profiles
                 </a>
             </li>
@@ -39,9 +42,15 @@
                 <input class="pic-input-button" type="submit" value="Save">
             </form>
             <section class="user-pics">
+
+              <% if (pictures === []) { %>
+                <img src="" alt="No Picture" />
+              <% }else{ %>
                 <% pictures.forEach(function(picture) { %>
-                    <img src="<%= picture.pic_path %>" alt="<%= picture.pic_name %>" />
+                  <img src="<%= picture.pic_path %>" alt="<%= picture.pic_name %>" />
                 <% })%>
+              <% }%>
+
             </section>
         </div>
     </div>
@@ -85,11 +94,12 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                            <ul class="list-group">
-                              <li class="list-group-item"><%= currentUserInfo.name %></li>
+                              <li class="list-group-item"><%= currentUserInfo.name %></li>         
                               <li class="list-group-item">Hola</li>
                               <li class="list-group-item">YouTube Link</li>
                               <li class="list-group-item"><i class="glyphicon glyphicon-user"></i>      Member since <%= currentUserInfo.createdAt %></li>
                               <li class="list-group-item"><i class="fa fa-envelope"></i>     <%= currentUserInfo.email %></li>
+
                            </ul>
                         </div>
                      </div>

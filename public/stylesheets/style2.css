@@ -262,3 +262,6 @@ h4 {
 }
 .choose-file {
 }
+#profile {
+  display: none;
+}
